@@ -1,0 +1,92 @@
+{% assign classType = section.settings.section_type %}
+
+{% if section.settings.section_show == true %}
+ 
+	<div data-section-id="{{ section.id }}" data-section-type="slideshow-section">
+		<div class="container">
+			{% if section.settings.section_title != blank %}
+				<h2 class="heading">
+					{{ section.settings.section_title }}
+				</h2>
+				<div class="logo-group logo-group--{{ classType }}">
+					{% for block in section.blocks %}
+						<div class="logo-group__item">
+						{% if block.settings.item_link != blank %}
+							<a href="{{ block.settings.item_link }}" class="logo-group__item-link" target="_blank">
+								{% if block.settings.item_image != blank %}
+									{{ block.settings.item_image | img_tag: '', 'logo-group__item-img', 'small' }}
+								{% endif %}
+							</a>
+						{% else %}
+							{% if block.settings.item_image != blank %}
+								{{ block.settings.item_image | img_tag: '', 'logo-group__item-img', 'small' }}
+							{% endif %}
+						{% endif %}
+						</div>	
+					{% endfor %}
+				</div>
+			{% endif %}
+		</div>
+	</div>
+{% endif %}
+
+{% schema %}
+	{
+		"name": "Logo list",
+		"class": "logo-list", 
+		"settings": [
+			{
+				"type": "checkbox",
+				"id": "section_show",
+				"label": "Show section",
+				"default": true
+			},
+			{
+				"type": "select",
+				"id": "section_type",
+				"options": [
+						{ 
+							"value": "static", 
+							"label": "Static"
+						},
+						{ 
+							"value": "slider", 
+							"label": "Slider"
+						}
+					],
+				"default": "static",		
+				"label": "Section type"
+			},
+			{
+				"type": "text",
+				"id": "section_title",
+				"label": "Section title",
+				"default": "List of logos"
+			}
+		],
+		"blocks": [
+			{
+				"type": "text",
+				"name": "Item",
+				 "settings": [
+					{
+						"type": "text",
+						"id": "item_link",
+						"label": "Item link"
+					},
+					{
+						"type": "image_picker",
+						"id": "item_image",
+						"label": "Image"
+					}
+				]
+			}
+		],
+		"presets": [
+			{
+				"name": "Logo list",
+				"category": "Index page sections"
+			}
+		]
+	}
+{% endschema %} 

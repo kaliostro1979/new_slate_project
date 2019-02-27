@@ -1,0 +1,103 @@
+// Text colors
+$color-body-text: #000;
+
+// Background colors
+$color-body: #fff;
+$color-bg: #f0f0f0; 
+
+// Placeholders
+$placeholder-color-foreground: #161d25;
+$placeholder-color-background: #f9fafb;
+
+// Other colors
+$color-accent: var(--color-accent);
+$color-border: var(--color-border);
+$color-blue: #0057FF;
+
+// Helper colors for form error states
+$color-disabled: #000000;
+$color-disabled-border: #000000;
+$color-error: #ff6d6d;
+$color-error-bg: #ffffff;
+$color-success: #000000;
+$color-success-bg: #000000;
+
+// Typography
+$font-heading: var(--font-heading);
+$font-body: var(--font-body);
+$font-body-weight: 400;
+$font-body-style: normal;
+$font-body-bold-weight: 700;
+
+$font-src: "../assets/fonts/";
+
+//Bootstrap variables
+$font-family-sans-serif: $font-body;
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-base: $font-body;
+$headings-font-family: $font-heading;
+
+$body-bg: $color-body;
+$body-color: $color-body-text;
+
+// Transitions
+$transition-duration: 250ms;
+$transition-timing: ease-in-out;
+
+// Grid
+$screen-sm: 576px;
+$screen-md: 768px;
+$screen-lg: 990px;
+$screen-xl: 1200px;
+$screen-xxl: 1500px;
+
+$grid-small: $screen-sm;
+$grid-medium: $screen-md;
+$grid-large: $screen-xl;
+$grid-widescreen: $screen-xl;
+$grid-gutter: 30px;
+
+$container-sm: 540px;
+$container-md: 720px;
+$container-lg: 960px;
+$container-xl: 1170px;
+$container-xxl: 1400px;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: $screen-sm,
+  md: $screen-md,
+  lg: $screen-lg,
+  xl: $screen-xl,
+  xxl: $screen-xxl,
+) !default;
+
+$container-max-widths: (
+  sm: $container-sm,
+  md: $container-md,
+  lg: $container-lg,
+  xl: $container-xl,
+  xxl: $container-xxl,
+) !default;
+
+// Breakpoints used with the media-query mixin
+$small: 'small';
+$medium: 'medium';
+$medium-down: 'medium-down';
+$medium-up: 'medium-up';
+$large: 'large';
+$large-down: 'large-down';
+$large-up: 'large-up';
+$widescreen: 'widescreen';
+
+$breakpoints: (
+  $small '(max-width: #{$grid-medium - 1})',
+  $medium '(min-width: #{$grid-medium}) and (max-width: #{$grid-large - 1})',
+  $medium-down '(max-width: #{$grid-large - 1})',
+  $medium-up '(min-width: #{$grid-medium})',
+  $large '(min-width: #{$grid-large}) and (max-width: #{$grid-widescreen - 1})',
+  $large-down '(max-width: #{$grid-widescreen - 1})',
+  $large-up '(min-width: #{$grid-large})',
+  $widescreen '(min-width: #{$grid-widescreen})'
+);
+

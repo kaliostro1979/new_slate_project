@@ -1,0 +1,113 @@
+.page{
+  padding: 30px 0;
+  .page__title{
+    line-height: 48px;
+    font-size: 40px;
+    margin: 0;
+  }
+  .page__time{
+    line-height: 16px;
+    font-size: 11px;
+  }
+}
+.page_main{
+  border: solid $color-bg;
+  border-width: 1px 0 ;
+  padding: 25px 0;
+  margin-top: 25px;
+}
+.page-content{
+  max-width: 750px;
+  .small-text{
+    line-height: 16px;
+    font-size: 11px;
+    margin:0;
+  }
+  img {
+    margin: 24px 0 10px 0;
+  }
+  >p:first-of-type{
+    line-height: 32px;
+    font-size: 19px;
+  }
+  p{
+    line-height: 24px;
+    font-size: 16px;
+    margin:0;
+    padding-bottom: 15px;
+
+  }
+  a{
+    color: initial;
+    text-decoration: underline;
+  }
+
+  h1{
+    margin: 30px 0;
+    line-height: 48px;
+    font-size: 40px;
+  }
+  h2{
+    margin: 30px 0;
+    line-height: 40px;
+    font-size: 33px;
+  }
+  h3{
+    margin: 30px 0;
+    line-height: 32px;
+    font-size: 28px;
+  }
+  h4{
+    margin: 30px 0;
+    line-height: 32px;
+    font-size: 23px;
+  }
+  ul, ol{
+    line-height: 24px;
+    font-size: 16px;
+    padding:15px 0 15px 16px;
+    margin: 0;
+    li{
+      padding: 0 0 10px  30px;
+    }
+  }
+  table{
+    max-width: 100%;
+    margin: 20px 0;
+    td{
+      font-size: 11px;
+      padding: 16px 0;
+      border-top: 1px solid $color-bg;
+
+    }
+    tr{
+      &:last-of-type{
+        td{
+          padding: 16px 0;
+          border-bottom: 1px solid $color-bg;
+        }
+      }
+    }
+  }
+  blockquote{
+    background: $color-bg;
+    padding: 60px 40px 35px;
+    margin: 25px 0 15px;
+    position: relative;
+    p{
+      font-size: 19px;
+      line-height: 32px;
+    }
+    &:before{
+      content: "”";
+      font-size: 70px;
+      line-height:40px;
+      width: 100%;
+      display: block;
+      text-align: center;
+    }
+
+  }
+
+}
+
