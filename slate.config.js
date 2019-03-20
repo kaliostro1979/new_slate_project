@@ -13,6 +13,28 @@ module.exports = {
         jquery: path.resolve('./node_modules/jquery'),
         'lodash-es': path.resolve('./node_modules/lodash-es'),
       },
+    },
+    module: {
+      rules: [
+        {
+          test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+          exclude: /node_modules/,
+          use: [
+            {
+              loader: 'url-loader',
+              options: {
+                limit: 1000,
+                mimetype: 'application/font-woff'
+              }
+            }
+          ]
+        },
+        {
+          test: /fonts\/.*\.(eot|svg|ttf|otf)$/,
+          exclude: /node_modules/,
+          loader: 'file-loader',
+        }
+      ]
     }
-  },
+  }
 };
