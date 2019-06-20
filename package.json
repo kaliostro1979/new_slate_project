@@ -93,17 +93,12 @@
       "Image"
     ],
     "ignore": [
-      "*.min.js",
-      "/*.js",
-      "*.lib.js",
-      "*.min.css",
-      "/src/vendor/",
-      "/assets/",
-      "/uploads/",
-      "/src/scripts/vendor",
-      "/src/jade",
-      "/src/icons",
-      "/src/styles/vendor"
+      "**/*.min.js",
+      "**/*.lib.js",
+      "**/*.min.css",
+      "**/vendor/",
+      "**/assets/",
+      "**/uploads/"
     ]
   },
   "prettier": {
@@ -116,7 +111,7 @@
   ],
   "lint-staged": {
     "linters": {
-      "*.{scss}": [
+      "*.scss": [
         "prettier-stylelint --write",
         "git add"
       ],
@@ -126,16 +121,12 @@
       ]
     },
     "ignore": [
-      "*.min.js",
-      "*.lib.js",
-      "*.min.css",
-      "/src/vendor/",
-      "/assets/",
-      "/uploads/",
-      "/src/scripts/vendor",
-      "/src/jade",
-      "/src/icons",
-      "/src/styles/vendor"
+      "**/*.min.js",
+      "**/*.lib.js",
+      "**/*.min.css",
+      "**/vendor/",
+      "**/assets/",
+      "**/uploads/"
     ]
   },
   "scripts": {
