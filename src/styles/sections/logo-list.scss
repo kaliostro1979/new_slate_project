@@ -1,47 +1,45 @@
 .logo-list {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 }
 
-.logo-group{
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-	text-align: center;	
+.logo-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-.logo-group__item{
-	display: inline-block;	
-	margin: 0 15px 25px;
+.logo-group__item {
+  display: inline-block;
+  margin: 0 15px 25px;
 }
 
-.logo-group__item-img{
-	max-height: 90px;	
-	filter: grayscale(100%);
-	opacity: 0.2;
+.logo-group__item-img {
+  max-height: 90px;
+  filter: grayscale(100%);
+
+  opacity: 0.2;
 }
 
 @media screen and (min-width: $screen-sm) {
-
-	.logo-group__item{
-		margin-right: 25px;
-		margin-bottom: 35px;
-		margin-left: 25px;
-    }
+  .logo-group__item {
+    margin-right: 25px;
+    margin-bottom: 35px;
+    margin-left: 25px;
+  }
 }
 
 @media screen and (min-width: $screen-md) {
-
-	.logo-group__item{
-		margin-right: 35px;
-		margin-left: 35px;
-    }
+  .logo-group__item {
+    margin-right: 35px;
+    margin-left: 35px;
+  }
 }
 
 @media screen and (min-width: $screen-lg) {
-
-	.logo-group__item{
-		margin-right: 40px;
-		margin-left: 40px;		
-    }
+  .logo-group__item {
+    margin-right: 40px;
+    margin-left: 40px;
+  }
 }
