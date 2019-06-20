@@ -1,3 +1,3 @@
-export function cookieEnabled() {
-  return navigator.cookieEnabled;
+export function cookieEnabled () {
+  return navigator.cookieEnabled
 }
