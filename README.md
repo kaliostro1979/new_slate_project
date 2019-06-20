@@ -1,45 +1,75 @@
-[![Build Status](https://travis-ci.org/Shopify/starter-theme.svg?branch=master)](https://travis-ci.org/Shopify/starter-theme)
+# MakebeCool Starter Theme
 
-# Starter Theme
-
-> **Starter Theme and [Slate v1](https://github.com/Shopify/slate) are currently in beta!** You should expect potentially breaking changes between updates and more bugs than a finalized release. Slate v1.0 has not yet been tested on Windows.
-
-Starter Theme represents the Shopify Themes Team's opinionated starting point for new Slate theme projects. It strives to include up-to-date best practices and solutions that we have deemed needed for the majority of themes we build. It is a reflection of what’s possible when building a theme!
-
-## Intentional lack of styles
-
-When launching Starter Theme for the first time, you may notice a lack of CSS styles. Is Starter Theme broken? Definitely not! Keep in mind this was done intentionally. Starter Theme is not a framework but rather a starting point for your project. It contains all the files the Shopify Themes team considers to be the bare essentials to building a Shopify theme.
-
-For templates and snippets, standard Liquid tags and logic have been included with little to no markup, classes, or other code that you will need to remove. The [`src/styles/theme.scss`](https://github.com/Shopify/starter-theme/blob/master/src/assets/styles/theme.scss) file contains extremely limited styling to not get in the way of developers' CSS preferences. The JavaScript files contain most of our [helper scripts](https://github.com/Shopify/theme-scripts/tree/master/packages) and [lazysizes](https://github.com/aFarkas/lazysizes) for responsive image lazy loading.
-
-## System requirements
-
-You'll want to ensure you have the following already installed on your local machine before getting started with Starter theme:
-
-- **Node:** The current LTS (long-term support) release. We like to use a Node Version Manager like [NVM](https://github.com/creationix/nvm).
-
-- **NPM 5+ or Yarn:** Both of these package managers have [ups and downs](https://blog.risingstack.com/yarn-vs-npm-node-js-package-managers/), choose whichever you prefer. Follow the installation instructions [for Yarn](https://yarnpkg.com/en/docs/install) or [NPM](https://www.npmjs.com/get-npm) to make sure you're using the latest version.
 
 ## Getting started
 
-To get started with Starter Theme, run the following command in your terminal:
+To get started with MakebeCool Starter Theme, run the following command in your terminal:
+
+> **Install dependencies** 
 
 ```
-$ yarn create slate-theme my-new-theme
+$ npm i
 ```
 
-For more information on connecting your new project with a Shopify store, see the [Slate docs](https://github.com/Shopify/slate/wiki/3.-Connect-to-your-store).
+## Slate way
 
-## Contributing
+If you want to start Slate v1. way of developing read these instructions. 
 
-For help on setting up the repository locally, building, testing, and contributing
-please see [CONTRIBUTING.md](https://github.com/Shopify/starter-theme/blob/master/CONTRIBUTING.md).
+Your config file is .env file. [Here](https://shopify.github.io/slate/docs/deploy-environments) you csn find docs about it.
 
-## Code of Conduct
+Commands:
 
-All developers who wish to contribute through code or issues, take a look at the
-[Code of Conduct](https://github.com/Shopify/starter-theme/blob/master/CODE_OF_CONDUCT.md).
+```
+$ npm run start
+```
+This will call "slate-tools start" command to start the local developing. Compiles your local theme files into a dist directory, uploads these files to your remote Shopify store and finally boots up a local Express server that will serve most of your CSS and JavaScript.
 
-## License
+```
+$ npm run watch
+```
+This will call "slate-tools start --skipFirstDeploy". Skips the file upload sequence and simply boots up the local Express server.
 
-Copyright © 2018 Shopify. See [LICENSE](https://github.com/Shopify/starter-theme/blob/master/LICENSE) for further details.
+```
+$ npm run build 
+```
+Builds a production-ready version of the theme by compiling the files into the dist folder.
+
+```
+$ npm run deploy
+```
+This will call "slate-tools build && slate-tools deploy" command and uploads the dist folder to the Shopify store.
+
+```
+$ npm run zip
+```
+This will call ["slate-tools build && slate-tools zip"] command. Compiles the contents of the dist directory and creates a ZIP file in the root of the project.
+
+## Theme Kit way
+
+
+If you want to start Slate v0 with Theme Kit deploy, read these instructions. 
+
+Your config file is config.yml file. [Here](https://shopify.github.io/themekit/configuration/) you csn find docs about it.
+
+Commands:
+
+```
+$ theme download
+```
+
+If called without any arguments, it will download the entire theme, otherwise if you specify the files you want to download, then only those files will be retrieved. 
+
+```
+$ theme deploy
+```
+Deploy will completely replace what is on Shopify with what is in your current project directory. This means that any files that are on Shopify but are not on your local disk will be removed from Shopify. Any files that are both on your local disk and Shopify will be updated. Lastly any files that are only on your local disk will be upload to Shopify.
+
+```
+$ theme watch
+```
+Watch will start a process that will watch your directory for changes and upload them to Shopify.
+
+## Gulp
+
+Also you can use Gulp, for gathering and deploying assets to the Shopify store.
+Your Gulp config file is gulpfile.js file. 

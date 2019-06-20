@@ -1,0 +1,19 @@
+# Config info
+# https://shopify.github.io/themekit/configuration/ 
+
+development:
+  password: 7d341e966b1f6bd86151073319abbcd1
+  theme_id: "46904016975"
+  store: grid360liquid.myshopify.com
+  ignore_files:
+    - config/settings_data.json
+  # - config/settings_schema.json
+
+
+production:
+  password: 7d341e966b1f6bd86151073319abbcd1
+  theme_id: "46904016975"
+  store: grid360liquid.myshopify.com
+  ignore_files:
+    - config/settings_data.json
+  # - config/settings_schema.json
