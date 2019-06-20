@@ -44,6 +44,7 @@ $ npm run zip
 ```
 This will call ["slate-tools build && slate-tools zip"] command. Compiles the contents of the dist directory and creates a ZIP file in the root of the project.
 
+
 ## Theme Kit way
 
 
