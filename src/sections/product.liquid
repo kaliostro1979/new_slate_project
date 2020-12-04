@@ -3,35 +3,40 @@
   {%- assign current_variant = product.selected_or_first_available_variant -%}
   {%- assign featured_image = current_variant.featured_image | default: product.featured_image -%}
 
-  {% for image in product.images %}
-    {% capture wrapper_class %}
-      {%- unless featured_image == image -%}
-        hide
-      {%- endunless -%}
-    {% endcapture %}
+    {% for media in product.media %}
+      {% case media.media_type %}
+        {% when 'image' %}
+          <div class="product-image">
+            {% include 'responsive-image' with
+              image: media,
+              max_width: 700,
+              max_height: 800,
+              image_attributes: "data-product-featured-image",
+              wrapper_class: wrapper_class,
+              wrapper_attributes: "data-product-image-wrapper",
+            %}
+           </div>
 
-    {% include 'responsive-image' with
-      image: image,
-      max_width: 700,
-      max_height: 800,
-      image_attributes: "data-product-featured-image",
-      wrapper_class: wrapper_class,
-      wrapper_attributes: "data-product-image-wrapper",
-    %}
-  {% endfor %}
+        {% when 'external_video' %}
+          <div class="product-single__media">
+            {{ media | external_video_tag }}
+          </div>
+        {% when 'video' %}
+          <div class="product-single__video">
+            {{ media | video_tag: controls: true }}
+          </div>
+        {% when 'model' %}
+          <div class="product-single__media">
+            {{ media | model_viewer_tag }}
+          </div>
+        {% else %}
+          <div class="product-single__media">
+            {{ media | media_tag }}
+          </div>
+      {% endcase %}
+    {% endfor %}
 
-  {% if product.images.size > 1 %}
-    <ul>
-      {% for image in product.images %}
-        <li>
-          <a href="{{ image.src | img_url: '480x480' }}" data-thumbnail-id="{{ image.id }}" data-product-single-thumbnail>
-            <img class="product-single__thumbnail-image" src="{{ image.src | img_url: '160x160' }}" alt="{{ image.alt | escape }}">
-          </a>
-        </li>
-      {% endfor %}
-    </ul>
-  {% endif %}
-
+  
   <h1>{{ product.title }}</h1>
   <p>{{ product.vendor }}</p>
 
