@@ -55,6 +55,7 @@
 
   {% include 'script-tags', layout: 'theme' %}
   {% include 'font' %}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
   {{ content_for_header }}
 </head>
@@ -69,5 +70,23 @@
     </main>
   </div>
   {% section 'footer' %}
+
+  {% include 'cart-drawer' %}
+  {% include 'ajax-cart-template' %}
+  <script src="{{ 'handlebars.min.js' | asset_url }}"></script>
+  <script src="{{ 'modernizr.min.js' | asset_url }}"></script>
+  <script src="{{ 'ajax-cart.js' | asset_url }}"></script>
+  <script>
+    jQuery(function($) {
+      ajaxCart.init({
+        formSelector: '#AddToCartForm',
+        cartContainer: '#CartContainer',
+        addToCartSelector: '#AddToCart',
+        moneyFormat: {{ shop.money_format | json }}
+      });
+      window.monies = {{ shop.money_format | json }};
+    });
+  </script>
+
 </body>
 </html>

@@ -47,7 +47,7 @@
       </div>
     {% endif %}
 
-  
+
 
     <form action="/search" method="get" role="search">
       <label for="Search-{{ section.id }}" class="label-hidden">
@@ -65,7 +65,7 @@
         <span class="icon-fallback-text">{{ 'general.search.submit' | t }}</span>
       </button>
     </form>
-    <a href="/cart">
+    <a href="/cart" class="header__cart js-drawer-open-button-right"  aria-controls="CartDrawer">
       {% include 'icon-cart' %}
       {{ 'layout.cart.title' | t }}
       ({{ cart.item_count }} {{ 'layout.cart.items_count' | t: count: cart.item_count }})

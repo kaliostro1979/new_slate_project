@@ -93,6 +93,8 @@
     "general": {
       "title": "Your cart",
       "remove": "Remove",
+      "view_cart": "View cart",
+      "close": "Close",
       "note": "Special instructions for seller",
       "subtotal": "Subtotal:",
       "shipping_at_checkout": "Shipping & taxes calculated at checkout",
