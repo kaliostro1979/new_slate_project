@@ -10,6 +10,13 @@ import '../../styles/theme.scss.liquid'
 
 import '../templates/cart_quantity'
 
+// vendors
+import '../vendors/jquery.validate'
+import '../vendors/jquery.maskedinput.min'
+
+// modules
+import '../modules/form-validation'
+
 import { focusHash, bindInPageLinks } from '@shopify/theme-a11y'
 import { cookieEnabled } from '../vendors/utils'
 

@@ -129,8 +129,9 @@
       "phone": "Phone Number",
       "message": "Message",
       "send": "Send",
+      "resend": "Send another message",
       "post_success":
-        "Thanks for contacting us. We'll get back to you as soon as possible."
+        "Your message has been sent successfully!"
     }
   },
   "customer": {

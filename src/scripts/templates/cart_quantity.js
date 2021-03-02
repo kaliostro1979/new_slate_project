@@ -5,15 +5,10 @@ import $ from 'jquery';
     $('<div class="quantity-nav"><div class="quantity-button quantity-up">+</div><div class="quantity-button quantity-down">-</div></div>').insertAfter('.quantity input')
     $('.quantity').each(function () {
       const $spinner = $(this)
-
-      const $input = $spinner.find('input[type="number"]')
-
+      const $input = $spinner.find('.js-qty__num')
       const $btnUp = $spinner.find('.quantity-up')
-
       const $btnDown = $spinner.find('.quantity-down')
-
       const min = $input.attr('min')
-
       const max = $input.attr('max')
 
       $btnUp.click(() => {

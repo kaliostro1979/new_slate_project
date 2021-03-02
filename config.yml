@@ -3,7 +3,7 @@
 
 development:
   password: 7d341e966b1f6bd86151073319abbcd1
-  theme_id: "46904016975"
+  theme_id: "120134631503"
   store: grid360liquid.myshopify.com
   ignore_files:
     - config/settings_data.json
@@ -11,7 +11,7 @@ development:
 
 production:
   password: 7d341e966b1f6bd86151073319abbcd1
-  theme_id: "46904016975"
+  theme_id: "120134631503"
   store: grid360liquid.myshopify.com
   ignore_files:
     - config/settings_data.json
