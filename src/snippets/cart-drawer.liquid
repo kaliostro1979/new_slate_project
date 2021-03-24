@@ -1,0 +1,11 @@
+<!-- /snippets/cart-drawer.liquid -->
+
+<div id="CartDrawer" class="ajax-cart-drawer">
+  <div class="drawer__header">
+    <div class="drawer__header-title">{{ 'cart.general.title' | t }}</div>
+    <a href="/collections" class="drawer__continue d-lg-none">{{ 'cart.general.continue_shopping' | t }}</a>
+    <div class="drawer__continue d-none d-lg-block js-drawer-close">{{ 'cart.general.close' | t }}</div>
+  </div>
+  <div class="drawer__cart-container" id="CartContainer"></div>
+</div>
+<div class="ajax-cart-overlay"></div>

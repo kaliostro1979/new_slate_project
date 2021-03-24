@@ -1,42 +1,32 @@
-.cart{
+
+/*main page container*/
+.cart {
   padding-top: 30px;
   padding-bottom: 70px;
-
-  /*table{
-    width: 100%;
-    color: inherit;
-    position: relative;
-    td{
-      border-top: 1px solid $color-bg;
-      padding: 25px 10px 25px 0;
-    }
-    tr{
-      vertical-align: top;
-      position: relative;
-    }
-    tr:last-of-type td{
-      border-bottom: 1px solid $color-bg;
-    }
-  }*/
 }
-/* заглавие страницы */
-.cart-title{
+
+/* page title */
+.cart-title {
   line-height: 48px;
   font-size: 40px;
   padding-bottom: 24px;
   margin: 0;
 }
-/* контейнер продукта*/
-.cart-product__item{
+
+
+/* product container*/
+.cart-product__item {
   padding: 30px 0;
   border-top: 1px solid $color-bg;
 }
-.cart-product__item:last-of-type{
+
+.cart-product__item:last-of-type {
   border-bottom: 1px solid $color-bg;
 }
-/* изображение продукта в корзине */
-.cart-image{
-  img{
+
+/* product image */
+.cart-image {
+  img {
     min-width: 80px;
     max-width: 150px;
     width: 100%;
@@ -44,18 +34,20 @@
     object-fit: contain;
   }
 }
-/* поле количество продукта*/
-.cart-quantity{
-  .quantity{
+
+/* product quantity field*/
+.cart-quantity {
+  .quantity {
     max-width: 120px;
     min-width: 100px;
     position: relative;
     border: 1px solid $color-bg;
     border-radius: 5px;
-    margin-top:10px;
+    margin-top: 10px;
     margin-bottom: 20px;
   }
-  input{
+
+  input {
     width: calc(100% - 40px);
     border: none;
     margin: auto;
@@ -65,15 +57,17 @@
     text-align: center;
     padding: 10px 0;
     outline: none;
-    -moz-appearance:textfield;
+    -moz-appearance: textfield;
 
   }
+
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
     -webkit-appearance: none;
   }
-  /*кнопки  +- */
-  .quantity-button{
+
+  /*buttons + - */
+  .quantity-button {
     position: absolute;
     top: 0;
     line-height: 24px;
@@ -88,12 +82,13 @@
     background: #fff;
   }
 
-  .quantity-button.quantity-up{
+  .quantity-button.quantity-up {
     right: 0;
   }
 }
-/*кнопка удаления товара из корзины*/
-.cart-remove{
+
+/*delete button*/
+.cart-remove {
   font-weight: 900;
   line-height: 16px;
   font-size: 20px;
@@ -103,47 +98,57 @@
   top: -15px;
 
 }
-.cart-remove:hover{
+
+.cart-remove:hover {
   color: inherit;
   text-decoration: none;
 }
-/*данные о продукте*/
-.cart-product{
-  .cart-product__title{
+
+
+/*product data*/
+.cart-product {
+  .cart-product__title {
     font-weight: 600;
     line-height: 24px;
     font-size: 16px;
     color: initial;
   }
-  .cart-product__title:hover{
+
+  .cart-product__title:hover {
     color: initial;
     text-decoration: none;
   }
-  .cart-product__price{
+
+  .cart-product__price {
     margin-top: 10px;
     line-height: 16px;
     font-size: 13px;
   }
 }
-/*блок под списком продукта где отображается общая стоимость всех товаров в корзине и другая информация*/
-.cart-info{
+
+
+/*block below the product list. Where is the total value of all items in the cart and other information */
+.cart-info {
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
-.cart-info__content{
+
+.cart-info__content {
   padding: 50px 0;
   width: 100%;
   max-width: 350px;
 }
-.cart-info__subtotal{
+
+.cart-info__subtotal {
   font-weight: 500;
   line-height: 32px;
   font-size: 19px;
   padding-bottom: 20px;
 }
-/*кнопка обновить*/
-.button-update{
+
+/*button  update*/
+.button-update {
   width: 100%;
   background: transparent;
   color: $color-blue;
@@ -152,8 +157,9 @@
   border-radius: 5px;
   margin: 5px 0;
 }
-/*кнопка купить*/
-.button-checkout{
+
+/*button checkout*/
+.button-checkout {
   width: 100%;
   background: $color-blue;
   color: #fff;
@@ -162,18 +168,28 @@
   border-radius: 5px;
   margin: 5px 0;
 }
-/*медиа запросы*/
+
+/*media queries */
 @media screen and (min-width: $screen-md) {
-  .cart-quantity .quantity{
+  .cart-quantity .quantity {
     margin-top: -10px;
   }
-  .cart-product .cart-product__price{
+
+  .cart-product .cart-product__price {
     margin-top: 40px;
   }
-  .cart-remove{
+
+  .cart-remove {
     right: 0;
   }
-  .cart-info__content{
+
+  .cart-product .cart-product__price {
+    margin-top: 40px;
+  }
+  .cart-remove {
+    right: 0;
+  }
+  .cart-info__content {
     padding: 50px 0;
     width: 250px;
   }

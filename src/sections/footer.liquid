@@ -6,7 +6,7 @@
     <div class="text-center">
       {% include 'footer-payment' %}
 
-      <div class="footer__cpr">Shopify Stores and Services by <a href="#">makebecool</a></div>
+      <p class="footer__cpr">&copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: '/' }}</p>
     </div>
   </div>
 </footer>
