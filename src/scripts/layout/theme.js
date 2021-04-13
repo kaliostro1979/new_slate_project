@@ -8,8 +8,6 @@ import 'lazysizes/plugins/respimg/ls.respimg'
 import '../../styles/theme.scss'
 import '../../styles/theme.scss.liquid'
 
-import '../templates/cart_quantity'
-
 // vendors
 import '../vendors/jquery.validate'
 import '../vendors/jquery.maskedinput.min'
@@ -17,12 +15,11 @@ import '../vendors/jquery.maskedinput.min'
 // modules
 import '../modules/form-validation'
 
-import { focusHash, bindInPageLinks } from '@shopify/theme-a11y'
+import { focusHash } from '@shopify/theme-a11y'
 import { cookieEnabled } from '../vendors/utils'
 
 // Common a11y fixes
 focusHash()
-bindInPageLinks()
 
 // Apply a specific class to the html element for browser support of cookies.
 if (cookieEnabled()) {

@@ -31,10 +31,11 @@
     <meta name="description" content="{{ page_description | escape }}">
   {%- endif -%}
 
-  {% include 'social-meta-tags' %}
-  {% include 'meta-graph' %}
-  {% include 'style-tags', layout: 'theme' %}
-  {% include 'css-variables' %}
+  {% render 'font' %}
+  {% render 'social-meta-tags' %}
+  {% render 'meta-graph' %}
+  {% render 'css-variables' %}
+  {% render 'style-tags', layout: 'theme' %}
 
   <script>
     document.documentElement.className = document.documentElement.className.replace('no-js', '');
@@ -53,9 +54,8 @@
     {% endif %}
   </script>
 
-  {% include 'script-tags', layout: 'theme' %}
-  {% include 'font' %}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  {% include 'script-tags', layout: 'theme' %}
 
   {{ content_for_header }}
 </head>
@@ -74,7 +74,6 @@
   {% include 'cart-drawer' %}
   {% include 'ajax-cart-template' %}
   <script src="{{ 'handlebars.min.js' | asset_url }}"></script>
-  <script src="{{ 'modernizr.min.js' | asset_url }}"></script>
   <script src="{{ 'ajax-cart.js' | asset_url }}"></script>
 
   <script>
@@ -85,7 +84,6 @@
         addToCartSelector: '#AddToCart',
         moneyFormat: {{ shop.money_format | json }}
       });
-      window.monies = {{ shop.money_format | json }};
     });
   </script>
 

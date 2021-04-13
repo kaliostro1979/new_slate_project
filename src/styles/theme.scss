@@ -4,6 +4,9 @@
  * MakeBeCool | Built with Slate
  */
 
+// Normalize
+@import '~normalize.css';
+
 // Settings
 @import './variables';
 
@@ -12,7 +15,6 @@
 @import './tools/functions';
 
 // Core
-@import './static/bootstrap/bootstrap';
 @import './core/forms';
 @import './core/helpers';
 @import './core/layout';
@@ -20,9 +22,6 @@
 @import './core/responsive-tables';
 @import './core/rte';
 @import './core/typography';
-
-// Vendors
-@import './static/line-awesome/line-awesome';
 
 // Components
 @import './components/buttons';
