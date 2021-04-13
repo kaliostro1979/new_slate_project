@@ -10,8 +10,8 @@ $placeholder-color-foreground: #161d25;
 $placeholder-color-background: #f9fafb;
 
 // Other colors
-$color-accent: var(--color-accent);
-$color-border: var(--color-border);
+$color-accent: #7ba6ad;
+$color-border: #f4f4f4;
 $color-blue: #0057FF;
 
 // Helper colors for form error states
@@ -23,22 +23,11 @@ $color-success: #000000;
 $color-success-bg: #000000;
 
 // Typography
-$font-heading: var(--font-heading);
-$font-body: var(--font-body);
+$font-heading: 'sans-serif';
+$font-body: 'sans-serif';
 $font-body-weight: 400;
 $font-body-style: normal;
 $font-body-bold-weight: 700;
-
-$font-src: "../assets/fonts/";
-
-//Bootstrap variables
-$font-family-sans-serif: $font-body;
-$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
-$font-family-base: $font-body;
-$headings-font-family: $font-heading;
-
-$body-bg: $color-body;
-$body-color: $color-body-text;
 
 // Transitions
 $transition-duration: 250ms;
