@@ -1,51 +1,79 @@
-<h1>{{ 'customer.register.title' | t }}</h1>
+<div class="container">
 
-{% form 'create_customer' %}
-  {{ form.errors | default_errors }}
+  <h1>{{ 'customer.register.title' | t }}</h1>
 
-  <label for="FirstName" class="label-hidden">
-    {{ 'customer.register.first_name' | t }}
-  </label>
-  <input type="text"
-    name="customer[first_name]"
-    id="FirstName"
-    placeholder="{{ 'customer.register.first_name' | t }}"
-    autofocus
-    {% if form.first_name %}value="{{ form.first_name }}"{% endif %}>
+  {% form 'create_customer', data-form: 'register', class: 'form' %}
+    {{ form.errors | default_errors }}
 
-  <label for="LastName" class="label-hidden">
-    {{ 'customer.register.last_name' | t }}
-  </label>
-  <input type="text"
-    name="customer[last_name]"
-    id="LastName"
-    placeholder="{{ 'customer.register.last_name' | t }}"
-    {% if form.last_name %}value="{{ form.last_name }}"{% endif %}>
+  <div class="form-group-row">
+    <div class="form-group">
+      <input type="text"
+        name="customer[first_name]"
+        id="FirstName"
+        class="input"
+        placeholder="{{ 'customer.register.first_name' | t }}"
+        autofocus
+        {% if form.first_name %}value="{{ form.first_name }}"{% endif %}>
+        <label for="FirstName" class="input-label">
+          {{ 'customer.register.first_name' | t }}
+        </label>
+        {% render 'icons', icon: 'tick' %}
+        {% render 'icons', icon: 'fail' %}
+    </div>
 
-  <label for="Email" class="label-hidden">
-    {{ 'customer.register.email' | t }}
-  </label>
-  <input type="email"
-    name="customer[email]"
-    id="Email"
-    class="{% if form.errors contains 'email' %}input-error{% endif %}"
-    placeholder="{{ 'customer.register.email' | t }}"
-    value="{% if form.email %}{{ form.email }}{% endif %}"
-    spellcheck="false"
-    autocomplete="off"
-    autocapitalize="off">
+    <div class="form-group">
+      <input type="text"
+        name="customer[last_name]"
+        id="LastName"
+        class="input"
+        placeholder="{{ 'customer.register.last_name' | t }}"
+        {% if form.last_name %}value="{{ form.last_name }}"{% endif %}>
+        <label for="LastName" class="input-label">
+          {{ 'customer.register.last_name' | t }}
+        </label>
+        {% render 'icons', icon: 'tick' %}
+        {% render 'icons', icon: 'fail' %}
+    </div>
+  </div>
 
-  <label for="CreatePassword" class="label-hidden">
-    {{ 'customer.register.password' | t }}
-  </label>
-  <input type="password"
-    name="customer[password]"
-    id="CreatePassword"
-    class="{% if form.errors contains 'password' %}input-error{% endif %}"
-    placeholder="{{ 'customer.register.password' | t }}">
+  <div class="form-group">
+    <input type="email"
+      name="customer[email]"
+      id="Email"
+      class="input {% if form.errors contains 'email' %}input-error{% endif %}"
+      placeholder="{{ 'customer.register.email' | t }}"
+      value="{% if form.email %}{{ form.email }}{% endif %}"
+      spellcheck="false"
+      autocomplete="off"
+      autocapitalize="off">
+      <label for="Email" class="input-label">
+        {{ 'customer.register.email' | t }}
+      </label>
+      {% render 'icons', icon: 'tick' %}
+      {% render 'icons', icon: 'fail' %}
+    </div>
 
-  <p>
-    <input type="submit" value="{{ 'customer.register.submit' | t }}" class="button">
-  </p>
-  <a href="{{ shop.url }}">{{ 'customer.register.cancel' | t }}</a>
-{% endform %}
+    <div class="form-group">
+    <input type="password"
+      name="customer[password]"
+      id="CreatePassword"
+      class="input {% if form.errors contains 'password' %}input-error{% endif %}"
+      placeholder="{{ 'customer.register.password' | t }}">
+      <label for="CreatePassword" class="input-label">
+        {{ 'customer.register.password' | t }}
+      </label>
+      {% render 'icons', icon: 'tick' %}
+      {% render 'icons', icon: 'fail' %}
+    </div>
+    <div class="button-wrapper">
+      <input type="submit" value="{{ 'customer.register.submit' | t }}" class="button">
+      <div class="login-link">
+        {{ 'customer.register.login' | t }}
+        {{ 'layout.customer.log_in' | t | customer_login_link }}
+      </div>
+    </div>
+
+    {% comment %} <a href="{{ shop.url }}">{{ 'customer.register.cancel' | t }}</a> {% endcomment %}
+  {% endform %}
+
+  </div>

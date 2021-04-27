@@ -47,6 +47,10 @@ symbol {
 
 // Payment icons
 .payment-icons {
+  display: flex;
   user-select: none;
   cursor: default;
+  li {
+    margin: 0 5px;
+  }
 }

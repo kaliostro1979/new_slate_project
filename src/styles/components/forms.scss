@@ -1,0 +1,204 @@
+.form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: 550px;
+}
+
+.form-group {
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+  height: 58px;
+  &:last-of-type {
+    margin-bottom: 20px;
+  }
+}
+.form-group-row {
+  display: flex;
+  justify-content: space-between;
+}
+.form-group-row .form-group {
+  width: calc(50% - 5px);
+  margin-right: 10px;
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+
+.form-group-row .form-group-3 {
+  @media all and (min-width: $screen-md) {
+    width: calc(33% - 10px);
+    margin-right: 10px;
+  }
+}
+.form-group-row .form-group-9 {
+  @media all and (min-width: $screen-md) {
+    width: calc(77% - 10px);
+  }
+}
+
+.form-group .password-recover {
+  position: absolute;
+  top: 32px;
+  right: 10px;
+}
+
+.select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  background-image: url('data:image/svg+xml;utf8,<svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.22768 0.651785C9.2872 0.711309 9.31697 0.779762 9.31697 0.857142C9.31697 0.934524 9.2872 1.00298 9.22768 1.0625L5.06696 5.22321C5.00744 5.28274 4.93899 5.3125 4.86161 5.3125C4.78423 5.3125 4.71577 5.28274 4.65625 5.22321L0.495536 1.0625C0.436012 1.00298 0.40625 0.934524 0.40625 0.857142C0.40625 0.779762 0.436012 0.711309 0.495536 0.651785L0.941964 0.205357C1.00149 0.145833 1.06994 0.116071 1.14732 0.116071C1.2247 0.116071 1.29315 0.145833 1.35268 0.205357L4.86161 3.71429L8.37054 0.205357C8.43006 0.145833 8.49851 0.116071 8.57589 0.116071C8.65327 0.116071 8.72173 0.145833 8.78125 0.205357L9.22768 0.651785Z" fill="lightGray"/></svg>');
+  background-repeat: no-repeat;
+  background-position-x: 98%;
+  background-position-y: 25px;
+  border: 1px solid #dfdfdf;
+  border-radius: 2px;
+  margin-right: 2rem;
+  padding: 1rem;
+  padding-right: 2rem;
+  position: absolute;
+}
+
+.input,
+.textarea,
+.select {
+  width: 100%;
+  padding: 27px 15px 5px;
+  // margin-top: 13px;
+  background-color: transparent;
+  border: 1px solid #f0f0f0;
+  border-radius: 5px;
+  line-height: 24px;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  &:focus,
+  &:active,
+  &[data-focus-visible] {
+    border-color: 1px solid #cccccc;
+    outline: none;
+  }
+  &::placeholder {
+    opacity: 0;
+  }
+  &[aria-invalid='true'],
+  &[data-valid='false'] {
+    border-color: red;
+  }
+}
+
+.input-label {
+  position: absolute;
+  top: 20px;
+  bottom: auto;
+  left: 15px;
+  margin-bottom: 12px;
+  margin-bottom: 0;
+  letter-spacing: 0.14px;
+  color: #000000;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+.textarea {
+  height: 86px;
+  resize: none;
+}
+
+.input:placeholder-shown + .input-label,
+.textarea:placeholder-shown + .input-label,
+.select:placeholder-shown + .input-label {
+  top: 20px;
+}
+
+.input:placeholder-shown + .error + .input-label,
+.textarea:placeholder-shown + .error + .input-label,
+.select:placeholder-shown:placeholder-shown + .error + .input-label {
+  top: 20px;
+  font-size: inherit;
+}
+
+.input:focus + .input-label,
+.input.focus-visible + .input-label,
+.textarea:focus + .input-label,
+.textarea.focus-visible + .input-label,
+.select.filled + .input-label {
+  top: 10px;
+  font-size: 12px;
+}
+
+.input:not(:placeholder-shown) + .input-label,
+.textarea:not(:placeholder-shown) + .input-label {
+  top: 10px;
+  font-size: 12px;
+}
+
+.input:focus + .error + .input-label,
+.input.focus-visible + .error + .input-label,
+.input + .error + .input-label,
+.textarea:focus + .error + .input-label,
+.textarea.focus-visible + .error + .input-label,
+.textarea + .error + .input-label {
+  top: 10px;
+  font-size: 12px;
+}
+
+.select[data-valid="true"]  + .input-label,
+.select:focus  + .input-label,
+.province-select + .input-label {
+  top: 10px;
+  font-size: 12px;
+}
+
+label.error {
+  position: absolute;
+  left: 15px;
+  top: 105%;
+  font-size: 11px;
+  color: red;
+}
+
+.form-group .icon {
+  position: absolute;
+  top: 18px;
+  right: 15px;
+  display: none;
+  fill: #cccccc;
+}
+
+.form-group--has-text .icon {
+  right: 135px
+}
+
+.form-group.valid {
+  .icon--tick {
+    display: inline-block;
+  }
+}
+
+.form-group.error {
+  .icon--fail {
+    display: inline-block;
+    fill: red;
+  }
+}
+
+// Success
+.form-success,
+.form-errors {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 32px 20px;
+  background-color: #f0f0f0;
+}
+
+.form-success .icon--check {
+  fill: #15a82c;
+}
+
+.form-success__message {
+}

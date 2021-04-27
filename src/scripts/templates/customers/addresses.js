@@ -8,6 +8,7 @@
  */
 
 import { CountryProvinceSelector } from '@shopify/theme-addresses'
+import $ from 'jquery'
 
 const selectors = {
   addressContainer: '[data-address]',
@@ -57,3 +58,11 @@ if (addresses.length) {
     initializeAddressForm(countryProvinceSelector, addressContainer)
   })
 }
+
+$(document).ready(()=> {
+  $('[data-address-country]').each((index, el) => {  // adds styles to the label of the autocompleted select
+    if ($(el).attr('data-default') !== '') {
+      $(el).addClass('filled')
+    }
+  })
+})

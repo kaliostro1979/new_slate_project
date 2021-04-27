@@ -4,7 +4,7 @@
   {{ page.content }}
 </div>
 
-{% form 'contact', data-form: 'contact' %}
+{% form 'contact', data-form: 'contact', class:'form' %}
 
   {% if form.posted_successfully? %}
     <div class="form-success">

@@ -8,7 +8,12 @@ import $ from 'jquery'
 setTimeout(() => {
   let d = {
     forms: [
-      "[data-form='contact']"
+      "[data-form='contact']",
+      "[data-form='register']",
+      "[data-form='login']",
+      "[data-form='reset']",
+      "[data-form='activate']",
+      "[data-form='address']"
     ]
   }
   let g = {
@@ -45,10 +50,56 @@ setTimeout(() => {
             },
             'contact[body]': {
               required: true
+            },
+            'customer[first_name]': {
+              required: true,
+              minlength: 2
+            },
+            'address[first_name]': {
+              required: true,
+              minlength: 2
+            },
+            'customer[last_name]': {
+              required: true,
+              minlength: 2
+            },
+            'address[last_name]': {
+              required: true,
+              minlength: 2
+            },
+            'customer[email]': {
+              required: true,
+              email: true
+            },
+            'customer[password]': {
+              required: true,
+              minlength: 4
+            },
+            'address[city]': {
+              required: true
+            },
+            'address[zip]': {
+              required: true
             }
           },
           messages: {
             'contact[name]': {
+              required: 'Enter your name',
+              minlength: 'min length is 2 characters'
+            },
+            'customer[first_name]': {
+              required: 'Enter your name',
+              minlength: 'min length is 2 characters'
+            },
+            'address[first_name]': {
+              required: 'Enter your name',
+              minlength: 'min length is 2 characters'
+            },
+            'customer[last_name]': {
+              required: 'Enter your name',
+              minlength: 'min length is 2 characters'
+            },
+            'address[last_name]': {
               required: 'Enter your name',
               minlength: 'min length is 2 characters'
             },
@@ -60,11 +111,25 @@ setTimeout(() => {
               required: 'Enter your email',
               email: 'Must be a valid email'
             },
+            'customer[email]': {
+              required: 'Enter your email',
+              email: 'Must be a valid email'
+            },
+            'customer[password]': {
+              required: 'Enter your password',
+              minlength: 'min length is 4 characters'
+            },
             'contact[phone]': {
               required: 'Enter your phone number'
             },
             'contact[body]': {
               required: 'Enter your message subject'
+            },
+            'address[city]': {
+              required: 'Enter your city'
+            },
+            'address[zip]': {
+              required: 'Enter your postal/zip code'
             }
           },
           highlight: function (element) {
