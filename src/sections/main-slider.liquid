@@ -1,0 +1,82 @@
+<div class="slider-wrapper">
+    <div class="swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            {% for block in section.blocks %}
+            <div class="swiper-slide">
+                <div class="slider-title"><h1>{{ block.settings.title }}</h1></div>
+                <div class="slider-img">
+                    <img src="{{ block.settings.image | img_url : '300x300' }}" alt="">
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+</div>
+
+
+{% schema %}
+    {
+        "name": "Main slider",
+
+        "settings": [],
+
+    "blocks": [
+    {
+        "type": "slider",
+        "name": "Slider",
+        "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image_mobile",
+                    "label": "Image (mobile)"
+                },
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Title"
+                },
+                {
+                    "type": "text",
+                    "id": "sub_title",
+                    "label": "Sub title"
+                },
+                {
+                    "type": "richtext",
+                    "id": "text",
+                    "label": "Text"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "icon",
+                    "label": "Icon"
+                },
+                {
+                    "type": "url",
+                    "id": "slide_url",
+                    "label": "Slide url"
+                }
+            ]
+        }
+    ],
+
+    "presets": [
+    {
+    "name": "Main banner",
+    "category": "Banner"
+    }
+    ]
+    }
+{% endschema %}

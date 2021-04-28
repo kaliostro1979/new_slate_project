@@ -8,6 +8,8 @@ import 'lazysizes/plugins/respimg/ls.respimg'
 import '../../styles/theme.scss'
 import '../../styles/theme.scss.liquid'
 
+import '../modules/main-slider'
+
 // vendors
 import '../vendors/jquery.validate'
 import '../vendors/jquery.maskedinput.min'

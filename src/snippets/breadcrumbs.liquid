@@ -1,8 +1,9 @@
+
 <nav aria-label="Home" class="breadcrumb">
-    {% if template != 'index' %}
+
         <a class="Breadcrumbs" href="/">Home </a> /
         <a class="Breadcrumbs" href="/collections/">Collections </a> /
-    {% endif %}
+
     {% if collection.title %}
         <a class="Breadcrumbs" href="/collections/{{ collection.title }}"> {{ collection.title }} </a> /
     {% endif %}

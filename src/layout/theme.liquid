@@ -69,7 +69,9 @@
     {% section 'header' %}
 
     <main role="main" id="MainContent">
-      {% render 'breadcrumbs' %}
+      {% if template != 'index' %}
+        {% render 'breadcrumbs' %}
+      {% endif %}
       <div class="container">
         {{ content_for_layout }}
       </div>

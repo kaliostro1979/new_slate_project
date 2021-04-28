@@ -1,0 +1,7 @@
+.collections-list{
+  display: flex;
+  &__item{
+    flex-basis: 20%;
+    margin: 20px;
+  }
+}
