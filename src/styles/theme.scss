@@ -22,6 +22,7 @@
 @import './core/responsive-tables';
 @import './core/rte';
 @import './core/typography';
+@import './core/global';
 
 @import './templates/customers/account';
 
@@ -31,6 +32,8 @@
 @import './components/placeholders';
 @import './components/responsive-images';
 @import './components/forms';
+@import './components/main-menu';
+@import './components/breadcrumbs';
 
 // Sections
 @import './sections/header';
@@ -50,3 +53,4 @@
 @import './templates/page';
 @import './templates/cart';
 @import './templates/contact';
+@import './templates/collection';

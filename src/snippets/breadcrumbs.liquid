@@ -1,0 +1,11 @@
+<nav aria-label="Home" class="breadcrumb">
+    {% if template != 'index' %}
+        <a class="Breadcrumbs" href="/">Home </a> /
+        <a class="Breadcrumbs" href="/collections/">Collections </a> /
+    {% endif %}
+    {% if collection.title %}
+        <a class="Breadcrumbs" href="/collections/{{ collection.title }}"> {{ collection.title }} </a> /
+    {% endif %}
+    <a class="Breadcrumbs" href="/collections/{{ product.type | handleize}}"> {{ product.type }} </a>
+    <span class="breadcrumb__link" aria-current="page" style="font-weight:bold;"> {{ product.title}}</span>
+</nav>

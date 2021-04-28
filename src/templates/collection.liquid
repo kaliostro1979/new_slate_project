@@ -8,7 +8,7 @@
     {% endif %}
 
     {% if collection.all_tags.size > 0 %}
-      <ul>
+      <ul class="product-tags__list">
         {% for tag in collection.all_tags %}
           {% if current_tags contains tag %}
             <li class="active">
@@ -24,9 +24,9 @@
     {% endif %}
   </header>
 
-  <div>
+  <div class="collection-wrapper">
     {% for product in collection.products %}
-      <div>
+      <div class="collection-wrapper__item">
         {% if product.featured_image != blank %}
           <a href="{{ product.url | within: collection }}">
             {% include 'responsive-image' with

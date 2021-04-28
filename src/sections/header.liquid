@@ -65,6 +65,11 @@
         <span class="icon-fallback-text">{{ 'general.search.submit' | t }}</span>
       </button>
     </form>
+    <ul class="main-menu_wrapper">
+      {% for link in linklists.main-menu.links %}
+        <li><a href= "{{ link.url }}">{{ link.title }}</a></li>
+      {% endfor %}
+    </ul>
     <a href="/cart" class="header__cart js-drawer-open-button-right"  aria-controls="CartDrawer">
       {% render 'icons', icon: 'cart' %}
       {{ 'layout.cart.title' | t }}
@@ -97,6 +102,7 @@
     {% endif %}
   </div>
   </div>
+
 </header>
 
 {% if section.settings.logo != blank %}
