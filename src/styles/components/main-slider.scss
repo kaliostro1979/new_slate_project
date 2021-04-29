@@ -1,26 +1,47 @@
-.slider-wrapper{
-  .swiper-container{
-    .swiper-wrapper{
+.slider-wrapper {
+  .swiper-container {
+    .swiper-wrapper {
       height: 500px;
     }
   }
 }
 
-.slider-title{
+.slider-title {
   position: absolute;
   top: 50%;
   left: 50%;
   z-index: 1;
   transform: translate(-50%, -50%);
+
+  h1 {
+    font-family: 'Insta Story Signature', sans-serif;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 60px;
+  }
 }
 
-.slider-img{
+.slide-subtitle{
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  h2{
+    font-family: 'Insta Story Signature', sans-serif;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 30px;
+  }
+}
+
+.slider-img {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  img{
+
+  img {
     height: 100%;
     width: 100%;
     object-fit: cover;

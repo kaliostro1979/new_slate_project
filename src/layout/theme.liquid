@@ -11,6 +11,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+
   {%- if settings.favicon != blank -%}
     <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
   {%- endif -%}
@@ -67,6 +70,7 @@
   <div class="wrap">
     {% section 'announcement-bar' %}
     {% section 'header' %}
+    {% render 'mega-menu' %}
 
     <main role="main" id="MainContent">
       {% if template != 'index' %}

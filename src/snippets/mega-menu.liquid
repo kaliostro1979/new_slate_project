@@ -1,0 +1,22 @@
+<div class="collections-bar__wrapper">
+    <ul class="collections-bar__list">
+        {% for link in linklists.collections-menu.links %}
+            {% if link.links != blank %}
+                <li class="collections-bar__list-item">
+                    <a href="{{ link.url }}">{{ link.title }}</a>
+                    {% if link.links %}
+                        <ul class="mega-menu__inner">
+                            <img src="{{ link.object.image.src | collection_img_url : '500x' }}" alt="">
+                            {% for child in link.links %}
+                                <li><a href="{{ child.url }}">{{ child.title }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </li>
+            {% endif %}
+            {% if link.links == blank%}
+                <li class="collections-bar__list-item"><a href="{{ link.url }}">{{ link.title }}</a></li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>

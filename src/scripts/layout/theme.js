@@ -9,6 +9,7 @@ import '../../styles/theme.scss'
 import '../../styles/theme.scss.liquid'
 
 import '../modules/main-slider'
+import '../modules/mega-menu'
 
 // vendors
 import '../vendors/jquery.validate'
