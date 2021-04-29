@@ -70,12 +70,14 @@
         <li><a href= "{{ link.url }}">{{ link.title }}</a></li>
       {% endfor %}
     </ul>
-    <a href="/cart" class="header__cart js-drawer-open-button-right"  aria-controls="CartDrawer">
-      {% render 'icons', icon: 'cart' %}
-      {{ 'layout.cart.title' | t }}
-      ({{ cart.item_count }} {{ 'layout.cart.items_count' | t: count: cart.item_count }})
-    </a>
-
+    <div class="cart-icon">
+      <a href="/cart" class="header__cart js-drawer-open-button-right"  aria-controls="CartDrawer">
+        {% render 'icons', icon: 'cart' %}
+        <span class="items-count">
+          {{ cart.item_count }}
+        </span>
+      </a>
+    </div>
     {% if shop.customer_accounts_enabled %}
       <ul>
         {% if customer %}
