@@ -10,6 +10,7 @@ import '../../styles/theme.scss.liquid'
 
 import '../modules/main-slider'
 import '../modules/mega-menu'
+import '../modules/product-images-slider'
 
 // vendors
 import '../vendors/jquery.validate'

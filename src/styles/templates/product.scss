@@ -1,3 +1,118 @@
+.product-wrapper{
+  display: flex;
+  max-width: 1500px;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 30px;
+  .product-image{
+    width: 50%;
+    margin-right: 40px;
+    .swiper-button-prev{
+      left: 35px;
+    }
+    .swiper-button-next{
+      right: 35px;
+    }
+    .gallery-top{
+      margin-bottom: 20px;
+    }
+  }
+  .product-info{
+    width: 50%;
+    &__title{
+      h1{
+        margin: 0;
+        font-family: 'Playfair Display ', sans-serif!important;
+        font-size: 50px;
+      }
+    }
+    &__vendor{
+      p{
+        font-family: 'Insta Story Signature', sans-serif;
+        font-size: 24px;
+      }
+      margin-bottom: 20px;
+    }
+    &__add-to-cart{
+      margin-bottom: 30px;
+      .selector-wrapper{
+        font-size: 24px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        select{
+          width: 30%;
+          margin-left: 14px;
+          padding: 5px;
+          border-radius: 6px;
+          &:focus{
+            outline: none;
+          }
+        }
+      }
+    }
+    &__quantity{
+      margin-bottom: 20px;
+      label{
+        margin-bottom: 10px;
+        display: inline-block;
+      }
+      .js-qty{
+        button{
+          padding: 10px 15px;
+          background-color: #0057FF;
+          color: #ffffff;
+          border: none;
+        }
+        input{
+          padding: 8px 15px;
+          width: 5%;
+          text-align: center;
+          &:focus{
+            outline: none;
+          }
+        }
+      }
+    }
+    div[data-price-wrapper]{
+      span{
+        font-size: 40px;
+        color: #ff0000;
+        font-weight: bold;
+      }
+    }
+    &__button{
+      display: flex;
+      margin: 15px 0;
+      align-items: center;
+      button{
+        margin-right: 20px;
+        padding: 15px 40px;
+        border-radius: unset;
+        background-color: #0057FF;
+        color: #ffffff;
+        border: none;
+      }
+    }
+    &__socials{
+      .social-sharing{
+        a{
+          text-decoration: none;
+          .icon{
+            fill: #0057FF;
+            margin-right: 10px;
+            width: 35px;
+            height: 35px;
+          }
+          span[aria-hidden="true"]{
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
 .product-single__thumbnail-image {
   border: 2px solid transparent;
 
